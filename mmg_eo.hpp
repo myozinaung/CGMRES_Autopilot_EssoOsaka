@@ -1,14 +1,14 @@
 #ifndef MMG_EO_H
 #define MMG_EO_H
 #define _USE_MATH_DEFINES
-
+#define pi 3.14159265359
 #include <cmath>
 
 class StateODE{
 private:
 
 // Constant Parameters
-    static constexpr double pi       = 3.14159265359;
+    
     static constexpr double rho_w    = 1000/9.80665; // why divided by 9.81
 
     static constexpr double Lpp      = 3.0;

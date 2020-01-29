@@ -18,6 +18,7 @@ void NMPCModel::stateFunc(const double t, const double* x, const double* u, doub
 // phix : the value of dphi/dx(t, x)
 void NMPCModel::phixFunc(const double t, const double* x, double* phix) // Analytical Gradient
 {
+    double x_ref[6] = { 0, 0, (60 * pi / 180) * sin(2 * pi * t / 200), 0.4, 0, 0 };
     hamiltonian ham;
     constexpr int dim_state_ = ham.dim_state_;
     for (int i = 0; i < dim_state_; i++) {

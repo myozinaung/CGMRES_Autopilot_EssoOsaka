@@ -9,7 +9,6 @@ private:
 
     
 public:
-    static constexpr double pi = 3.14159265359;
 
     static constexpr int dim_state_         = 6;
     static constexpr int dim_control_input_ = 2; // real u and dummy u
@@ -18,7 +17,7 @@ public:
     double q[6]          = { 0, 0, 1, 0, 0, 0 };
     double r[2]          = { 0, 0 };
     double q_terminal[6] = { 0, 0, 1, 0, 0, 0 };
-    double x_ref[6]      = { 0, 0, 30 * pi / 180, 0.4, 0, 0 };
+    //double x_ref[6]      = { 0, 0, 0 * pi / 180, 0.4, 0, 0 };
 
     double dummy_wt = 0.01;
 

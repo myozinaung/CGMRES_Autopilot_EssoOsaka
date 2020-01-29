@@ -1,12 +1,12 @@
-#include "multiple_shooting_cgmres_simulator.hpp"
+#include "multiple_shooting_cgmres_with_saturation_simulator.hpp"
 
 
-void nmpcsim::simulation(MultipleShootingCGMRES& nmpc_solver, const double* initial_state_vec, const double start_time, const double end_time, const double sampling_period, const std::string savefile_name)
+void nmpcsim::simulation(MultipleShootingCGMRESWithSaturation& nmpc_solver, const double* initial_state_vec, const double start_time, const double end_time, const double sampling_period, const std::string savefile_name)
 {
     NMPCModel model;
     NumericalIntegrator integrator;
-//    double current_state_vec[model.dimState()], next_state_vec[model.dimState()], control_input_vec[model.dimControlInput()];
-	double current_state_vec[6], next_state_vec[6], control_input_vec[3];
+ //   double current_state_vec[model.dimState()], next_state_vec[model.dimState()], control_input_vec[model.dimControlInput()];
+	double current_state_vec[4], next_state_vec[4], control_input_vec[1];
     std::chrono::system_clock::time_point start_clock, end_clock;
 
     std::string save_dir_name("../simulation_result");
@@ -25,8 +25,6 @@ void nmpcsim::simulation(MultipleShootingCGMRES& nmpc_solver, const double* init
     for(double current_time=start_time; current_time<end_time; current_time+= sampling_period){
         saveData(model.dimState(), model.dimControlInput(), state_data, control_input_data, error_data, current_time, current_state_vec, control_input_vec, nmpc_solver.getError(current_time, current_state_vec));
 
-        std::cout << current_time << "," << current_state_vec[0] << "," << current_state_vec[1] << "," << current_state_vec[2] << "," << current_state_vec[3] << "," << current_state_vec[4] << "," << current_state_vec[5] << "," << control_input_vec[0] << "," << nmpc_solver.getError(current_time, current_state_vec) << std::endl;
-
         // Compute the next state vector using the 4th Runge-Kutta-Gill method.
         integrator.rungeKuttaGill(current_time, current_state_vec, control_input_vec, sampling_period, next_state_vec);
 
@@ -41,9 +39,8 @@ void nmpcsim::simulation(MultipleShootingCGMRES& nmpc_solver, const double* init
         total_time += step_time;
 
         for(int i=0; i<model.dimState(); i++){
-            current_state_vec[i] = next_state_vec[i];
+            current_state_vec[i] = next_state_vec[i];    
         }
-//		std::cout << "One time step finished........................................." << std::endl;
     }
     std::cout << "End simulation" << std::endl;
     std::cout << "Total CPU time for control update: " << total_time << " [sec]" << std::endl;

@@ -97,7 +97,7 @@ void ContinuationGMRES::getControlInput(double* control_input_vec) const
 double ContinuationGMRES::getError(const double current_time, const double* current_state_vec)
 {
     //double error_vec[dim_solution_];
-	double error_vec[3*40];
+	double error_vec[3*20];
 	computeOptimalityError(current_time, current_state_vec, solution_vec_, error_vec);
     return std::sqrt(linearfunc::squaredNorm(dim_solution_, error_vec));
 }

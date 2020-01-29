@@ -22,7 +22,8 @@ private:
     const int dim_constraints_   = ham.dim_constraints_;
 
     double* q_terminal = ham.q_terminal;
-    double* x_ref      = ham.x_ref;
+    //double* x_ref      = ham.x_ref;
+    
     
 public:
     // State equation of the model.

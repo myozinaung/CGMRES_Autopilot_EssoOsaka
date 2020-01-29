@@ -16,18 +16,19 @@ double hamiltonian::hamiltonian_fun(const double t, const double* x, const doubl
 	return h;
 }
 
-double hamiltonian::phi_fun(const double t, const double* x)
-{
-	double phi = 0;
-	for (int i = 0; i < dim_state_; ++i)
-	{
-		phi += q_terminal[i] * pow((x[i] - x_ref[i]), 2);
-	}
-	return phi / 2;
-}
+//double hamiltonian::phi_fun(const double t, const double* x)
+//{
+//	double phi = 0;
+//	for (int i = 0; i < dim_state_; ++i)
+//	{
+//		phi += q_terminal[i] * pow((x[i] - x_ref[i]), 2);
+//	}
+//	return phi / 2;
+//}
 
 double hamiltonian::stageCost(const double t, const double* x, const double* u)
 {
+	double x_ref[6] = { 0, 0, (60 * pi / 180) * sin(2 * pi * t / 200), 0.4, 0, 0 };
 	double costStateTrack = 0;
 	for (int i = 0; i < dim_state_; ++i)
 	{

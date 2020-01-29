@@ -54,6 +54,21 @@
     <ClCompile Include="save_simulation_data.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="control_input_saturation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="control_input_saturation_sequence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="init_cgmres_with_saturation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="multiple_shooting_cgmres_with_saturation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="multiple_shooting_cgmres_with_saturation_simulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cgmres_simulator.hpp">
@@ -90,6 +105,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="save_simulation_data.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="control_input_saturation.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="control_input_saturation_sequence.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="init_cgmres_with_saturation.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="multiple_shooting_cgmres_with_saturation.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="multiple_shooting_cgmres_with_saturation_simulator.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

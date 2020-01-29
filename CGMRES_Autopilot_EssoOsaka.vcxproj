@@ -140,14 +140,19 @@
   <ItemGroup>
     <ClCompile Include="cgmres_simulator.cpp" />
     <ClCompile Include="continuation_gmres.cpp" />
+    <ClCompile Include="control_input_saturation.cpp" />
+    <ClCompile Include="control_input_saturation_sequence.cpp" />
     <ClCompile Include="hamiltonian.cpp" />
     <ClCompile Include="init_cgmres.cpp" />
+    <ClCompile Include="init_cgmres_with_saturation.cpp" />
     <ClCompile Include="linear_funcs.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrixfree_gmres.cpp" />
     <ClCompile Include="mmg_eo.cpp" />
     <ClCompile Include="multiple_shooting_cgmres.cpp" />
     <ClCompile Include="multiple_shooting_cgmres_simulator.cpp" />
+    <ClCompile Include="multiple_shooting_cgmres_with_saturation.cpp" />
+    <ClCompile Include="multiple_shooting_cgmres_with_saturation_simulator.cpp" />
     <ClCompile Include="nmpc_model.cpp" />
     <ClCompile Include="numerical_integrator.cpp" />
     <ClCompile Include="save_simulation_data.cpp" />
@@ -155,13 +160,18 @@
   <ItemGroup>
     <ClInclude Include="cgmres_simulator.hpp" />
     <ClInclude Include="continuation_gmres.hpp" />
+    <ClInclude Include="control_input_saturation.hpp" />
+    <ClInclude Include="control_input_saturation_sequence.hpp" />
     <ClInclude Include="hamiltonian.hpp" />
     <ClInclude Include="init_cgmres.hpp" />
+    <ClInclude Include="init_cgmres_with_saturation.hpp" />
     <ClInclude Include="linear_funcs.hpp" />
     <ClInclude Include="matrixfree_gmres.hpp" />
     <ClInclude Include="mmg_eo.hpp" />
     <ClInclude Include="multiple_shooting_cgmres.hpp" />
     <ClInclude Include="multiple_shooting_cgmres_simulator.hpp" />
+    <ClInclude Include="multiple_shooting_cgmres_with_saturation.hpp" />
+    <ClInclude Include="multiple_shooting_cgmres_with_saturation_simulator.hpp" />
     <ClInclude Include="nmpc_model.hpp" />
     <ClInclude Include="numerical_integrator.hpp" />
     <ClInclude Include="save_simulation_data.hpp" />
