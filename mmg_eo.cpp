@@ -113,7 +113,7 @@ void StateODE::prop_EO(const double t, const double* x, const double* u, double*
         r_ND = r*Lpp/U;
     }
     
-    double wP = wP0 - tau*abs(v_ND + xP_ND*r_ND) + CP_ND*pow((v_ND + xP_ND*r_ND),2);
+    double wP = wP0 - tau*abs(v_ND + xP_ND*r_ND) - CP_ND*pow((v_ND + xP_ND*r_ND),2);
     double Js;
     if (n == 0) {
         Js = 1.0e10;
@@ -188,7 +188,7 @@ void StateODE::rudd_EO(const double t, const double* x, const double* u, double*
         r_ND = r*Lpp/U;
     }
     
-    double wP = wP0 - tau*abs(v_ND + xP_ND*r_ND) + CP_ND*pow((v_ND + xP_ND*r_ND),2);
+    double wP = wP0 - tau*abs(v_ND + xP_ND*r_ND) - CP_ND*pow((v_ND + xP_ND*r_ND),2);
     double wPdash = 1-wP;    
     if (wPdash > 1) {// 2018/1/23 Bug fix (wP exceeded hundred or over)
         wPdash = 1;
